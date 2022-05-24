@@ -13,7 +13,7 @@ steps:
  image: plugins/docker
  settings:
    repo: pipeline/dronego
-   tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
+   tags: latest
    registry:
      from_secret: docker_registry
    username:
