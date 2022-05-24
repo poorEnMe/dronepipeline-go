@@ -29,6 +29,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
+    mirror: https://mirror.ccs.tencentyun.com
 - name: deliver
   image: sinlead/drone-kubectl
   settings:
