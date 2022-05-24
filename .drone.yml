@@ -12,8 +12,10 @@ steps:
 - name: publish
  image: plugins/docker
  settings:
-   repo: magalixcorp/k8scicd
+   repo: pipeline/dronego
    tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
+   registry:
+     from_secret: docker_registry
    username:
      from_secret: docker_username
    password:
