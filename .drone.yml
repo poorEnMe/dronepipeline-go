@@ -1,6 +1,15 @@
 kind: pipeline
 name: default
+type: docker
+clone:
+  disable: true
+
 steps:
+- name: clone
+  image: alpine/git
+  commands:
+    - git clone $DRONE_REPO .
+    - git checkout $DRONE_COMMIT
 - name: test
   image: golang:1.10-alpine
   commands:
